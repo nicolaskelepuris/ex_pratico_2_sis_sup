@@ -38,8 +38,20 @@ namespace src.Investimentos
 
         public decimal GetTaxaJurosCompostosMensal()
         {
-            var jurosMensal = (decimal)Math.Pow(1 + (double)JurosAnual, 1.0/12.0) - 1;
+            var jurosMensal = (decimal)Math.Pow(1 + (double)JurosAnual, 1.0 / 12.0) - 1;
             return jurosMensal;
+        }
+
+        public static IInvestimento Comparar(IInvestimento investimento1, IInvestimento investimento2)
+        {
+            if (investimento1.MontanteJurosCompostos() >= investimento2.MontanteJurosCompostos())
+            {
+                return investimento1;
+            }
+            else
+            {
+                return investimento2;
+            }
         }
     }
 }

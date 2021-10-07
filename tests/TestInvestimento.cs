@@ -40,5 +40,16 @@ namespace tests
 
             Assert.Equal(resultado, investimento.GetTaxaJurosCompostosMensal(), 4);
         }
+
+        [Fact]
+        public void TestComparar()
+        {
+            var juros = 0.1m;
+            var periodo = 10;
+            IInvestimento investimentoSuperior = new Investimento(montante: 2, jurosAnual: juros, periodoInvestimentoAnos: periodo);
+            IInvestimento investimentoInferior = new Investimento(montante: 1, jurosAnual: juros, periodoInvestimentoAnos: periodo);
+
+            Assert.Same(investimentoSuperior, Investimento.Comparar(investimentoSuperior, investimentoInferior));
+        }
     }
 }
