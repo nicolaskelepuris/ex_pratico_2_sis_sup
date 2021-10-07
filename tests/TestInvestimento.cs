@@ -29,5 +29,16 @@ namespace tests
 
             Assert.Equal(resultado, investimento.MontanteJurosCompostos(), 2);
         }
+
+        [Theory]
+        [InlineData(0.1, 0.007974)]
+        [InlineData(0.15, 0.011715)]
+        [InlineData(1, 0.059463)]
+        public void TestGetTaxaJurosCompostosMensal(decimal taxaJurosAnual, decimal resultado)
+        {
+            IInvestimento investimento = new Investimento(jurosAnual: taxaJurosAnual);
+
+            Assert.Equal(resultado, investimento.GetTaxaJurosCompostosMensal(), 4);
+        }
     }
 }

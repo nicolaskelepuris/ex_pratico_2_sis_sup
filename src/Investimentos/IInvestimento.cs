@@ -4,5 +4,6 @@ namespace src.Investimentos
     {
         decimal MontanteJurosSimples();
         decimal MontanteJurosCompostos();
+        decimal GetTaxaJurosCompostosMensal();
     }
 }
