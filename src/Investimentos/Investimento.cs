@@ -18,7 +18,15 @@ namespace src.Investimentos
         {
             var acrescimo = Montante * JurosAnual * PeriodoInvestimentoAnos;
             var montanteFinal = Montante + acrescimo;
-            
+
+            return montanteFinal;
+        }
+
+        public decimal MontanteJurosCompostos()
+        {
+            var juros = (decimal)Math.Pow(1 + (double)JurosAnual, PeriodoInvestimentoAnos);
+            var montanteFinal = Montante * juros;
+
             return montanteFinal;
         }
     }
