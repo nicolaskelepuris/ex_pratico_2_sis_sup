@@ -42,7 +42,7 @@ namespace src.Investimentos
             return jurosMensal;
         }
 
-        public static IInvestimento Comparar(IInvestimento investimento1, IInvestimento investimento2)
+        public static IInvestimento EncontrarMaior(IInvestimento investimento1, IInvestimento investimento2)
         {
             if (investimento1.MontanteJurosCompostos() >= investimento2.MontanteJurosCompostos())
             {

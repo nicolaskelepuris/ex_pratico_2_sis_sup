@@ -42,14 +42,14 @@ namespace tests
         }
 
         [Fact]
-        public void TestComparar()
+        public void TestEncontrarMaior()
         {
             var juros = 0.1m;
             var periodo = 10;
             IInvestimento investimentoSuperior = new Investimento(montante: 2, jurosAnual: juros, periodoInvestimentoAnos: periodo);
             IInvestimento investimentoInferior = new Investimento(montante: 1, jurosAnual: juros, periodoInvestimentoAnos: periodo);
 
-            Assert.Same(investimentoSuperior, Investimento.Comparar(investimentoSuperior, investimentoInferior));
+            Assert.Same(investimentoSuperior, Investimento.EncontrarMaior(investimentoSuperior, investimentoInferior));
         }
     }
 }
