@@ -15,7 +15,7 @@ namespace tests
         {
             IInvestimento investimento = new Investimento(montante: montante, jurosAnual: juros, periodoInvestimentoAnos: periodo);
 
-            Assert.Equal(resultado, investimento.MontanteJurosSimples());
+            Assert.Equal(resultado, investimento.MontanteJurosSimples(), 2);
         }
 
         [Theory]
